@@ -2,8 +2,8 @@
 
 ## What is this?
 
-対話的にコミットメッセージを記入できるスクリプトです。
-チーム内でコミットメッセージに書いて欲しいことをゆるく統一したい場合などに。
+這是一個對話式 commit 編寫工具
+可以幫助團隊盡量寫出相同形式的 commit message
 
 ![](https://raw.githubusercontent.com/shimokei53/git_simple_commit_message_editor/master/tty.gif)
 
@@ -12,13 +12,15 @@
 ```
 $ chmod +x gscme
 $ mv gscme /usr/local/bin/gscme
+
+# 以下為 optional, 也可以直接使用 gscme 指令來使用這個 script
 $ git config --local core.editor gscme
 ```
 
-mergeやrebaseの際はエディタを起動します。
-`CORE_EDITOR`という項目があるので、そちらへエディタを設定してください。
+merge 或 rebase 的時候會直接啟動編輯器。
+可以在 `CORE_EDITOR` 中設定您喜歡的 Editor。
 
-## 表示される質問リストについて
-`.gscme_msglist` というファイルを自動で作成します。
-一行毎に表示されるので、お好みに合わせて編集してください。
-チーム内でこのファイルのみ共有すればいいかなと思います。
+## 會詢問的問題
+會以一行一行的對話形式呈現。
+內容可以在專案資料夾中的 `.gscme_msglist` 設定。
+這個檔案可以在開發團隊中共享，讓 commit message 形式盡量統一。
